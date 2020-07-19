@@ -1,0 +1,16 @@
+{
+  "name": "to-utf8",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "license": "MIT",
+  "dependencies": {
+    "chardet": "^1.2.1",
+    "iconv-lite": "^0.6.2",
+    "pkg": "^4.4.9",
+    "yargs": "^15.4.1"
+  },
+  "scripts": {
+    "build": "pkg src/main.js --out-path=./bin",
+    "postinstall": "yarn build"
+  }
+}
