@@ -6,7 +6,7 @@ const chardet = require('chardet');
 
 Iconv.skipDecodeWarning = true;
 
-const kDefaultExt = ['.smi', '.ass', '.srt', '.vtt'];
+const kDefaultExt = ['.SMI', '.ASS', '.SRT', '.VTT'];
 const availableEncodings = ['UTF-16LE', 'UTF-16BE', 'ANSI'];
 
 let exts = [];
@@ -22,7 +22,7 @@ if (!argv.ext) {
 fs.readdirSync(argv.path).forEach((filename) => {
     const fullpath = path.join(argv.path, filename);
     if (!fs.statSync(fullpath).isDirectory()) {
-        const extname = path.extname(fullpath);
+        const extname = path.extname(fullpath).toUpperCase();
         if (extname !== '' && exts.includes(extname)) {
             const encodingType = chardet.detectFileSync(fullpath);
             if (availableEncodings.includes(encodingType)) {
