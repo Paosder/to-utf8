@@ -24,7 +24,7 @@ fs.readdirSync(argv.path).forEach((filename) => {
     if (!fs.statSync(fullpath).isDirectory()) {
         const extname = path.extname(fullpath).toUpperCase();
         if (extname !== '' && exts.includes(extname)) {
-            const encodingType = chardet.detectFileSync(fullpath);
+            const encodingType = chardet.detectFileSync(fullpath).toUpperCase();
             if (availableEncodings.includes(encodingType)) {
                 console.log(filename);
                 const content = fs.readFileSync(fullpath, 'binary');
