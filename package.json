@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "chardet": "^1.2.1",
+    "chokidar": "^3.4.2",
     "iconv-lite": "^0.6.2",
     "pkg": "^4.4.9",
     "yargs": "^15.4.1"
